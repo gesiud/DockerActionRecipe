@@ -5,9 +5,9 @@ on: [push]
 jobs:
   ci:
     runs-on: ubuntu-latest
-    steps: 
-      - uses actions/checkout@4.1.1
+    steps:
+      - uses: actions/checkout@v4.1.1
       - name: Uruchom moją własną akcję kontenerową
-        uses ./
+        uses: ./
         with:
           who-to-greet: "@gesiud"
