@@ -1,0 +1,14 @@
+name: 'Receptura Akcji Dockera'
+description: "Pozdrów kogoś"
+inputs:
+  who-to-greet:
+    description: 'Kogo pozdrowić'
+    required: true
+    default: 'Świecie ;)'
+  
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args: 
+    - ${{ inputs.who-to-greet }}
+
