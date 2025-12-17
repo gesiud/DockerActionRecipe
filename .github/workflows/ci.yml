@@ -20,3 +20,13 @@ jobs:
         if: ${{ steps.my-action.outputs.answer != 42}}
         run: |
           echo "::error file=entrypoint.sh,line=4,title=Error in container::The answer is not expected"
+
+      - name: Ustawianie wartosci
+        id: step_one
+        run: |
+          echo "action_state=yellow" >> $GITHUB_ENV
+
+      - name: Odczytanie wartosci
+        id: step_two
+        run: |
+          echo "${{ env.action_state}} " #spowoduje wyświetlenie wartości  'żółty'
