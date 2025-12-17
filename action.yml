@@ -5,7 +5,11 @@ inputs:
     description: 'Kogo pozdrowić'
     required: true
     default: 'Świecie ;)'
-  
+
+outputs:
+  answer: 
+    description: 'Odpowiedź na wszystko'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
