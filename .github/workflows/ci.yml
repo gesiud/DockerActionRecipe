@@ -21,11 +21,12 @@ jobs:
         run: |
           echo "::error file=entrypoint.sh,line=4,title=Error in container::The answer is not expected"
 
-    - name: Ustawianie wartosci
+      - name: Ustawianie wartosci
         id: step_one
         run: |
           echo "action_state=yellow" >> $GITHUB_OUTPUT
 
-      - run : |
+      - name: Odczytanie wartosci
+        id: step_two
+        run: |
           echo "${{ env.action_state}} " #spowoduje wyświetlenie wartości  'żółty'
-
